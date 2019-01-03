@@ -1,0 +1,57 @@
+﻿using UnityEngine.Audio;
+using System;
+using System.Collections;
+using UnityEngine;
+
+public class AudioManager : MonoBehaviour
+{
+    public Sound[] sounds;
+
+    public static AudioManager instance;
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        // Make this GameObject persist between scenes
+        DontDestroyOnLoad(gameObject);
+
+        foreach (Sound s in sounds)
+        {
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.clip;
+
+            s.source.volume = s.volume;
+            s.source.pitch = s.pitch;
+            s.source.loop = s.loop;
+        }
+    }
+
+    private void Start()
+    {
+        // Play("ElevatorMusic");
+    }
+
+    public void Play(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s.randomizePitch)
+        {
+            s.source.pitch = UnityEngine.Random.Range(s.pitch - s.randomPitchRange, s.pitch + s.randomPitchRange);
+            // Debug.Log("pitch = " + s.source.pitch);
+        }
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found in AudioManager sounds.");
+            return;
+        }
+
+        s.source.Play();
+    }
+}

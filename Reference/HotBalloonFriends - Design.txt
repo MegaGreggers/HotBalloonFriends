@@ -1,0 +1,34 @@
+HotBalloonFriends - Design, etc.
+
+- flammable balloons
+	- flaming cannonballs
+	- lighting strikes
+	- flaming arrows
+	- hydrogen balloons explode
+		- version 2 - explode into napalm w much wider damage area
+	
+	gameplay tactics
+		- avoid dark clouds - lighting strikes you if you pass beneath
+		- when on fire, you have limited time before you lose control and die on impact w ground
+		- when on fire, you can steer into enemies to take them down with you!
+		
+- Adventure
+	- Deliver packages
+	- Aquire permanent upgrades (more responsive control, stronger thrusts)
+	- Weapons - Drop bombs/Shoot cannons
+	- procedural generation (rogue-like?)
+
+- Battle Royale
+	- Start bare - only baskets/hazards can kill
+	- Gather coins to upgrade weapons
+	- Weapons
+		- Cannnon
+		- Bombs
+		- Flame Thrower
+		- Morning Star
+	- Defensive abilities
+		- Shields
+		- Counter to ricochet bombs/projectiles
+		
+Possible gameplay challenges
+	- you must be stationary or in a safe place to upgrade/repair or purchase weapons
